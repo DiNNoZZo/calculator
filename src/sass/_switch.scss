@@ -1,0 +1,57 @@
+.switch {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+
+  grid-column: 1/-1;
+  justify-self: center;
+  padding: 1rem;
+
+  &__label {
+    color: var(--switch-color-text);
+    cursor: pointer;
+    padding-right: 0.8rem;
+  }
+
+  &__input {
+    position: relative;
+    background: white;
+    width: 25px;
+    height: 15px;
+    -webkit-appearance: initial;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    outline: none;
+    font-size: 1.3rem;
+    font-family: Trebuchet, Arial, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1.5px solid var(--border-switch-color);
+
+    &:after {
+      position: absolute;
+      display: block;
+      line-height: 32px;
+      width: 46%;
+      height: 100%;
+      background: #fff;
+      box-sizing: border-box;
+      text-align: center;
+      transition: all 0.3s ease-in 0s;
+      color: black;
+      border: #888 1px solid;
+    }
+
+    &:after {
+      content: '';
+    }
+
+    &:checked:after {
+      background-color: var(--switch-bg);
+      left: 53%;
+      content: '';
+    }
+  }
+}

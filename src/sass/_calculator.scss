@@ -1,0 +1,92 @@
+.calculator {
+  background: linear-gradient(
+    115deg,
+    var(--bg-gradient-first) 0%,
+    var(--bg-gradient-second) 100%
+  );
+
+  & *,
+  & *:after,
+  & *:before {
+    transition: all 0.3s ease !important;
+  }
+
+  &__output {
+    background-color: var(--output-bg);
+    border: 0.1rem solid var(--color-border);
+
+    padding: 0 3%;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+
+  &__output-text {
+    font-weight: bold;
+  }
+}
+
+.btn {
+  background-color: var(--btn-bg);
+  color: var(--btn-text-color);
+  font-size: 2.5rem;
+  border: 0.1rem solid var(--color-border);
+  transition: all 0.5s ease;
+
+  &:hover {
+    cursor: pointer;
+    color: var(--btn-text-hover-color);
+    background-color: var(--btn-bg-hover-color);
+  }
+
+  &:focus {
+    animation-name: scale-text;
+    animation-duration: 0.5s;
+  }
+}
+
+@keyframes scale-text {
+  0% {
+    font-size: 2.8rem;
+  }
+  50% {
+    font-size: 2rem;
+  }
+  100% {
+    font-size: 2.8rem;
+  }
+}
+
+button {
+  font-size: 2.8rem;
+}
+
+// crazy selecting :D
+[data-operation] {
+  font-size: 3rem;
+}
+
+[data-all-clear]:hover {
+  background: linear-gradient(
+    145deg,
+    var(--color-red) -20%,
+    var(--all-clear-bg-hover-color-second) 123%
+  );
+}
+
+[data-result] {
+  color: var(--result-text-color);
+  font-size: 3rem;
+}
+
+[data-math] {
+  color: var(--math-text-color);
+  font-size: 1.6rem;
+}
+
+[data-equals]:hover {
+  background: linear-gradient(
+    145deg,
+    var(--color-green) 0%,
+    var(--equals-bg-hover-color-second) 95%
+  );
+}

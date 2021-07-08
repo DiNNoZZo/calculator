@@ -1,0 +1,56 @@
+// Resets
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  outline: none;
+}
+
+// Global sett
+html {
+  // 1rem = 10px
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Lora', serif;
+  font-size: 1.6rem;
+}
+
+.calculator {
+  position: relative;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(4, 7rem);
+  grid-template-rows: minmax(10rem, auto) repeat(5, 7rem);
+
+  .span-two {
+    grid-column: span 2;
+  }
+
+  &__output {
+    grid-column: 1/-1;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .creator {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    color: var(--creator-text-color);
+  }
+}
+
+// DEV SETT
+// * {
+//   outline: 0.5px solid black;
+// }

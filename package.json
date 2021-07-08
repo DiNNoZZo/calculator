@@ -1,0 +1,16 @@
+{
+  "name": "kalkulacka",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "watch": "sass --watch src/sass/style.scss:style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "parcel": "^2.0.0-beta.2"
+  }
+}

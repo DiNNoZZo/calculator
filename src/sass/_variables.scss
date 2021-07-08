@@ -1,0 +1,68 @@
+$width-calculator: 30rem;
+$height-calculator: 50rem;
+
+$padding-primary: 1.5rem;
+$margin-primary: 1.5rem;
+
+$color-red: #b60000;
+
+$color-green: #00a308;
+$color-white: #fff;
+
+$color-grey: #d9d5d2;
+$color-grey-dark: #d3d3d3b2;
+$color-turquoise: #22ddf2;
+$color-turquoise-light: #22ddf255;
+$color-light-blue: #3dadd9;
+$color-blue: #2175bf;
+$color-blue-transparent: #2175bf46;
+$color-dark-blue: #1c418c;
+$color-dark-blue-transparent: #1c418c54;
+
+$color-black: #000000;
+$color-orange: #ff6600;
+$color-grey-black: #2f2f2f;
+
+:root {
+  --color-red: #{$color-red};
+  --color-green: #{$color-green};
+  --color-white: #{$color-white};
+  --color-black: #{$color-black};
+  --color-orange: #{$color-orange};
+
+  --bg-gradient-first: #{$color-turquoise};
+  --bg-gradient-second: #{$color-blue};
+  --output-bg: #{$color-turquoise-light};
+  --result-text-color: #{$color-white};
+  --math-text-color: #{$color-grey-dark};
+  --color-border: #{$color-grey};
+  --btn-bg: #{$color-dark-blue-transparent};
+  --btn-text-color: #{$color-turquoise};
+  --btn-text-hover-color: #{$color-dark-blue};
+  --btn-bg-hover-color: #{$color-turquoise-light};
+  --all-clear-bg-hover-color-second: #{$color-turquoise};
+  --equals-bg-hover-color-second: #{$color-turquoise};
+  --switch-color-text: #{$color-grey-black};
+  --border-switch-color: #{$color-dark-blue};
+  --switch-bg: #{$color-white};
+  --creator-text-color: #{$color-grey-black};
+}
+
+.dark-theme {
+  --bg-gradient-first: #{$color-black};
+  --bg-gradient-second: #{$color-dark-blue};
+  --output-bg: #{$color-turquoise-light};
+  --result-text-color: #{$color-white};
+  --math-text-color: #{$color-grey-dark};
+  --color-border: #{$color-dark-blue};
+  --btn-bg: #{$color-dark-blue-transparent};
+  --btn-text-color: #{$color-turquoise};
+  --btn-text-hover-color: #{$color-dark-blue};
+  --btn-bg-hover-color: #{$color-turquoise-light};
+  --all-clear-bg-hover-color-second: #{$color-dark-blue-transparent};
+  --equals-bg-hover-color-second: #{$color-dark-blue-transparent};
+  --switch-color-text: #{$color-grey-black};
+  --border-switch-color: #{$color-orange};
+  --switch-bg: #{$color-orange};
+  --creator-text-color: #{$color-grey-black};
+}
