@@ -112,26 +112,26 @@ operationsBtn.forEach(btn => {
   btn.addEventListener('click', () => {
     calculator.chooseOperation(btn.innerText);
     calculator.updateDisplay();
-    unfocus(btn);
+    calculator.unfocus(btn);
   });
 });
 
 equals.addEventListener('click', () => {
   calculator.compute();
   calculator.updateDisplay();
-  unfocus(btn);
+  calculator.unfocus(equals);
 });
 
 allClearBtn.addEventListener('click', () => {
   calculator.clear();
   calculator.updateDisplay();
-  unfocus(btn);
+  calculator.unfocus(allClearBtn);
 });
 
 deleteBtn.addEventListener('click', () => {
   calculator.delete();
   calculator.updateDisplay();
-  unfocus(btn);
+  calculator.unfocus(deleteBtn);
 });
 
 ////////////////////////////////////////////////////////////////
