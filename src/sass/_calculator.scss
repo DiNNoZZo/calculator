@@ -8,7 +8,7 @@
   & *,
   & *:after,
   & *:before {
-    transition: all 0.3s ease !important;
+    transition: all 0.2s ease !important;
   }
 
   &__output {
@@ -30,7 +30,6 @@
   color: var(--btn-text-color);
   font-size: 2.5rem;
   border: 0.1rem solid var(--color-border);
-  transition: all 0.5s ease;
 
   &:hover {
     cursor: pointer;
@@ -38,9 +37,9 @@
     background-color: var(--btn-bg-hover-color);
   }
 
-  &:focus {
+  &:active {
     animation-name: scale-text;
-    animation-duration: 0.5s;
+    animation-duration: 200ms;
   }
 }
 

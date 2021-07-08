@@ -2,10 +2,11 @@
   "name": "kalkulacka",
   "version": "1.0.0",
   "description": "",
-  "main": "script.js",
+  "main": "index.html",
   "scripts": {
     "start": "parcel index.html",
-    "watch": "sass --watch src/sass/style.scss:style.css"
+    "watch": "sass --watch src/sass/style.scss:style.css",
+    "build": "parcel build index.html"
   },
   "keywords": [],
   "author": "",

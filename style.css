@@ -90,7 +90,7 @@ body {
   background: linear-gradient(115deg, var(--bg-gradient-first) 0%, var(--bg-gradient-second) 100%);
 }
 .calculator *, .calculator *:after, .calculator *:before {
-  transition: all 0.3s ease !important;
+  transition: all 0.2s ease !important;
 }
 .calculator__output {
   background-color: var(--output-bg);
@@ -108,16 +108,15 @@ body {
   color: var(--btn-text-color);
   font-size: 2.5rem;
   border: 0.1rem solid var(--color-border);
-  transition: all 0.5s ease;
 }
 .btn:hover {
   cursor: pointer;
   color: var(--btn-text-hover-color);
   background-color: var(--btn-bg-hover-color);
 }
-.btn:focus {
+.btn:active {
   animation-name: scale-text;
-  animation-duration: 0.5s;
+  animation-duration: 200ms;
 }
 
 @keyframes scale-text {
