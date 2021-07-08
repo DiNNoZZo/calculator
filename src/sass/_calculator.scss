@@ -43,6 +43,29 @@
   }
 }
 
+@media screen and (max-width: 540px) {
+  .calculator {
+    &:active {
+      color: var(--btn-text-hover-color);
+      background-color: var(--btn-bg-hover-color);
+      animation-name: scale-text;
+      animation-duration: 200ms;
+    }
+  }
+}
+
+/* For Tablets */
+@media screen and (min-width: 540px) and (max-width: 780px) {
+  .calculator {
+    &:active {
+      color: var(--btn-text-hover-color);
+      background-color: var(--btn-bg-hover-color);
+      animation-name: scale-text;
+      animation-duration: 200ms;
+    }
+  }
+}
+
 @keyframes scale-text {
   0% {
     font-size: 2.8rem;
