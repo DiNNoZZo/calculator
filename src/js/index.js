@@ -76,7 +76,7 @@ class Calculator {
   }
 
   unfocus(el) {
-    el.blur();
+    return el.blur();
   }
 
   updateDisplay() {
