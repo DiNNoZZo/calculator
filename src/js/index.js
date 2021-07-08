@@ -75,6 +75,10 @@ class Calculator {
     }
   }
 
+  unfocus(el) {
+    el.blur();
+  }
+
   updateDisplay() {
     this.displayResult.innerText = this.getDisplayNumber(this.currentOperand);
     if (this.operation != null) {
@@ -108,22 +112,26 @@ operationsBtn.forEach(btn => {
   btn.addEventListener('click', () => {
     calculator.chooseOperation(btn.innerText);
     calculator.updateDisplay();
+    unfocus(btn);
   });
 });
 
 equals.addEventListener('click', () => {
   calculator.compute();
   calculator.updateDisplay();
+  unfocus(btn);
 });
 
 allClearBtn.addEventListener('click', () => {
   calculator.clear();
   calculator.updateDisplay();
+  unfocus(btn);
 });
 
 deleteBtn.addEventListener('click', () => {
   calculator.delete();
   calculator.updateDisplay();
+  unfocus(btn);
 });
 
 ////////////////////////////////////////////////////////////////
