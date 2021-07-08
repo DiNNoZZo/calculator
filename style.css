@@ -120,7 +120,7 @@ body {
 }
 
 @media screen and (max-width: 540px) {
-  .calculator:active {
+  .calculator .btn:active {
     color: var(--btn-text-hover-color);
     background-color: var(--btn-bg-hover-color);
     animation-name: scale-text;

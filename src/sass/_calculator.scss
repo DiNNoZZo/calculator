@@ -45,11 +45,13 @@
 
 @media screen and (max-width: 540px) {
   .calculator {
-    &:active {
-      color: var(--btn-text-hover-color);
-      background-color: var(--btn-bg-hover-color);
-      animation-name: scale-text;
-      animation-duration: 200ms;
+    .btn {
+      &:active {
+        color: var(--btn-text-hover-color);
+        background-color: var(--btn-bg-hover-color);
+        animation-name: scale-text;
+        animation-duration: 200ms;
+      }
     }
   }
 }
