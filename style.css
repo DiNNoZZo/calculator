@@ -120,6 +120,10 @@ body {
 }
 
 @media screen and (max-width: 540px) {
+  .calculator .btn:hover {
+    color: var(--btn-text-color);
+    background-color: var(--btn-bg);
+  }
   .calculator .btn:active {
     color: var(--btn-text-hover-color);
     background-color: var(--btn-bg-hover-color);
@@ -129,7 +133,11 @@ body {
 }
 /* For Tablets */
 @media screen and (min-width: 540px) and (max-width: 780px) {
-  .calculator:active {
+  .calculator .btn:hover {
+    color: var(--btn-text-color);
+    background-color: var(--btn-bg);
+  }
+  .calculator .btn:active {
     color: var(--btn-text-hover-color);
     background-color: var(--btn-bg-hover-color);
     animation-name: scale-text;
@@ -159,6 +167,25 @@ button {
   background: linear-gradient(145deg, var(--color-red) -20%, var(--all-clear-bg-hover-color-second) 123%);
 }
 
+@media screen and (max-width: 540px) {
+  [data-all-clear]:hover {
+    background: none;
+  }
+
+  [data-all-clear]:active {
+    background: linear-gradient(145deg, var(--color-red) -20%, var(--all-clear-bg-hover-color-second) 123%);
+  }
+}
+/* For Tablets */
+@media screen and (min-width: 540px) and (max-width: 780px) {
+  [data-all-clear]:hover {
+    background: none;
+  }
+
+  [data-all-clear]:active {
+    background: linear-gradient(145deg, var(--color-red) -20%, var(--all-clear-bg-hover-color-second) 123%);
+  }
+}
 [data-result] {
   color: var(--result-text-color);
   font-size: 3rem;
@@ -173,6 +200,25 @@ button {
   background: linear-gradient(145deg, var(--color-green) 0%, var(--equals-bg-hover-color-second) 95%);
 }
 
+@media screen and (max-width: 540px) {
+  [data-equals]:hover {
+    background: none;
+  }
+
+  [data-equals]:active {
+    background: linear-gradient(145deg, var(--color-green) 0%, var(--equals-bg-hover-color-second) 95%);
+  }
+}
+/* For Tablets */
+@media screen and (min-width: 540px) and (max-width: 780px) {
+  [data-equals]:hover {
+    background: none;
+  }
+
+  [data-equals]:active {
+    background: linear-gradient(145deg, var(--color-green) 0%, var(--equals-bg-hover-color-second) 95%);
+  }
+}
 .switch {
   -webkit-touch-callout: none;
   /* iOS Safari */
