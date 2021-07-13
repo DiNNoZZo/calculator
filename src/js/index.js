@@ -1,36 +1,50 @@
 class Calculator {
-  constructor(displayMath, displayResult) {
-    this.displayMath = displayMath;
-    this.displayResult = displayResult;
-    this.clear();
+  _operationsBtns = document.querySelectorAll('[data-operation]');
+  _numbersBtns = document.querySelectorAll('[data-number]');
+  _displayMath = document.querySelector('[data-math]');
+  _displayResult = document.querySelector('[data-result]');
+  _deleteBtn = document.querySelector('[data-delete]');
+  _allClearBtn = document.querySelector('[data-all-clear]');
+  _equals = document.querySelector('[data-equals]');
+  _switcher = document.querySelector('.switch');
+  _body = document.body;
+
+  constructor() {
+    this._addEventListenerBtns(this._numbersBtns);
+    this._addEventListenerOperation(this._operationsBtns);
+    this._addEventListener(this._deleteBtn, this._delete.bind(this));
+    this._addEventListener(this._allClearBtn, this._clear.bind(this));
+    this._addEventListener(this._equals, this._compute.bind(this));
+    this._addEventListenerSwitch(this._switcher);
+    this._clear();
   }
 
-  clear() {
+  _clear() {
     this.currentOperand = '';
     this.previousOperand = '';
     this.operation = undefined;
   }
 
-  delete() {
+  _delete() {
     this.currentOperand = this.currentOperand.toString().slice(0, -1);
   }
 
-  appendNumber(number) {
+  _appendNumber(number) {
     if (number === '.' && this.currentOperand.includes('.')) return;
     this.currentOperand = this.currentOperand.toString() + number.toString();
   }
 
-  chooseOperation(operation) {
+  _chooseOperation(operation) {
     if (this.currentOperand === '') return;
     if (this.previouseOperand !== '') {
-      this.compute();
+      this._compute();
     }
     this.operation = operation;
     this.previousOperand = this.currentOperand;
     this.currentOperand = '';
   }
 
-  compute() {
+  _compute() {
     let computation;
     const prev = parseFloat(this.previousOperand);
     const curr = parseFloat(this.currentOperand);
@@ -56,7 +70,7 @@ class Calculator {
     this.previousOperand = '';
   }
 
-  getDisplayNumber(number) {
+  _getDisplayNumber(number) {
     const strNum = number.toString();
     const integerDigits = parseFloat(strNum.split('.')[0]);
     const decimalDigits = strNum.split('.')[1];
@@ -75,65 +89,49 @@ class Calculator {
     }
   }
 
-  updateDisplay() {
-    this.displayResult.innerText = this.getDisplayNumber(this.currentOperand);
+  _updateDisplay() {
+    this._displayResult.innerText = this._getDisplayNumber(this.currentOperand);
     if (this.operation != null) {
-      this.displayMath.innerText = `${this.getDisplayNumber(
+      this._displayMath.innerText = `${this._getDisplayNumber(
         this.previousOperand
       )} ${this.operation}`;
     } else {
-      this.displayMath.innerText = '';
+      this._displayMath.innerText = '';
     }
+  }
+
+  _addEventListenerBtns(buttons) {
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        this._appendNumber(btn.innerText);
+        this._updateDisplay();
+      });
+    });
+  }
+
+  _addEventListenerOperation(operations) {
+    operations.forEach(operation => {
+      operation.addEventListener('click', () => {
+        this._chooseOperation(operation.innerText);
+        this._updateDisplay();
+      });
+    });
+  }
+
+  _addEventListenerSwitch(switcher) {
+    switcher.addEventListener('change', e => {
+      const input = e.target.closest('input[type="checkbox"]');
+      if (input.checked) this._body.classList.add('dark-theme');
+      if (!input.checked) this._body.classList.remove('dark-theme');
+    });
+  }
+
+  _addEventListener(element, handler) {
+    element.addEventListener('click', () => {
+      handler();
+      this._updateDisplay();
+    });
   }
 }
 
-const operationsBtn = document.querySelectorAll('[data-operation]');
-const numbersBtn = document.querySelectorAll('[data-number]');
-const displayMath = document.querySelector('[data-math]');
-const displayResult = document.querySelector('[data-result]');
-const deleteBtn = document.querySelector('[data-delete]');
-const allClearBtn = document.querySelector('[data-all-clear]');
-const equals = document.querySelector('[data-equals]');
-
-const calculator = new Calculator(displayMath, displayResult);
-
-numbersBtn.forEach(btn => {
-  btn.addEventListener('click', () => {
-    calculator.appendNumber(btn.innerText);
-    calculator.updateDisplay();
-  });
-});
-
-operationsBtn.forEach(btn => {
-  btn.addEventListener('click', () => {
-    calculator.chooseOperation(btn.innerText);
-    calculator.updateDisplay();
-  });
-});
-
-equals.addEventListener('click', () => {
-  calculator.compute();
-  calculator.updateDisplay();
-});
-
-allClearBtn.addEventListener('click', () => {
-  calculator.clear();
-  calculator.updateDisplay();
-});
-
-deleteBtn.addEventListener('click', () => {
-  calculator.delete();
-  calculator.updateDisplay();
-});
-
-////////////////////////////////////////////////////////////////
-/////////////// Switch to dark theme
-
-const switcher = document.querySelector('.switch');
-const body = document.body;
-
-switcher.addEventListener('change', e => {
-  const input = e.target.closest('input[type="checkbox"]');
-  if (input.checked) body.classList.add('dark-theme');
-  if (!input.checked) body.classList.remove('dark-theme');
-});
+const calculator = new Calculator();

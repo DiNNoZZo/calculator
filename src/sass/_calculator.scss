@@ -54,8 +54,6 @@
       &:active {
         color: var(--btn-text-hover-color);
         background-color: var(--btn-bg-hover-color);
-        animation-name: scale-text;
-        animation-duration: 200ms;
       }
     }
   }
@@ -73,8 +71,6 @@
       &:active {
         color: var(--btn-text-hover-color);
         background-color: var(--btn-bg-hover-color);
-        animation-name: scale-text;
-        animation-duration: 200ms;
       }
     }
   }
